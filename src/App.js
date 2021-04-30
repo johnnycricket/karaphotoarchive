@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="App">
       <nav className="app-nav"><AmplifySignOut /></nav>
-
+      <header>
         Kara Photo Storage
       </header>
       <div className="content">
