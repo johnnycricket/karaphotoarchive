@@ -1,0 +1,18 @@
+{
+  "trigger": true,
+  "modules": [
+    "email-filter-blacklist"
+  ],
+  "parentResource": "karaphotoarchive46e059c3",
+  "functionName": "karaphotoarchive46e059c3PreSignup",
+  "resourceName": "karaphotoarchive46e059c3PreSignup",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/Users/johnvorwald/.nvm/versions/node/v10.16.3/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PreSignup",
+  "triggerTemplate": "PreSignup.json.ejs",
+  "triggerEventPath": "PreSignup.event.json",
+  "roleName": "karaphotoarchive46e059c3PreSignup",
+  "skipEdit": true,
+  "DOMAINBLACKLIST": "",
+  "enableCors": false
+}

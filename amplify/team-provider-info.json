@@ -1,0 +1,34 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-karaphotoarchive-dev-200601-authRole",
+      "UnauthRoleArn": "arn:aws:iam::334119362424:role/amplify-karaphotoarchive-dev-200601-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::334119362424:role/amplify-karaphotoarchive-dev-200601-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-karaphotoarchive-dev-200601-deployment",
+      "UnauthRoleName": "amplify-karaphotoarchive-dev-200601-unauthRole",
+      "StackName": "amplify-karaphotoarchive-dev-200601",
+      "StackId": "arn:aws:cloudformation:us-east-1:334119362424:stack/amplify-karaphotoarchive-dev-200601/1dd94dc0-8786-11eb-8991-0ad252bd0169",
+      "AmplifyAppId": "d1uk2pdx87w3b6"
+    },
+    "categories": {
+      "function": {
+        "karaphotoarchive46e059c3CustomMessage": {
+          "REDIRECTURL": "",
+          "EMAILSUBJECT": "Kara Vorwald Photography Archive Account Confirmation",
+          "EMAILMESSAGE": "Please confirm your email to activate your account on Kara Vorwald Archive",
+          "deploymentBucketName": "amplify-karaphotoarchive-dev-200601-deployment",
+          "s3Key": "amplify-builds/karaphotoarchive46e059c3CustomMessage-34613477552b4e46426f-build.zip"
+        },
+        "karaphotoarchive46e059c3PreSignup": {
+          "DOMAINBLACKLIST": "",
+          "deploymentBucketName": "amplify-karaphotoarchive-dev-200601-deployment",
+          "s3Key": "amplify-builds/karaphotoarchive46e059c3PreSignup-2b717333795974774e63-build.zip"
+        }
+      },
+      "auth": {
+        "karaphotoarchive46e059c3": {}
+      }
+    }
+  }
+}

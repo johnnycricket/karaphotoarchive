@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "karaphotoarchive46e059c3",
+  "functionName": "karaphotoarchive46e059c3CustomMessage",
+  "resourceName": "karaphotoarchive46e059c3CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/Users/johnvorwald/.nvm/versions/node/v10.16.3/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "karaphotoarchive46e059c3CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "",
+  "EMAILSUBJECT": "Kara Vorwald Photography Archive Account Confirmation",
+  "EMAILMESSAGE": "Please confirm your email to activate your account on Kara Vorwald Archive",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}
