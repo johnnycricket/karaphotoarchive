@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React from 'react';
 import Amplify, { Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -16,6 +16,9 @@ import Upload from './domains/upload';
 Amplify.configure(awsconfig);
 
 const App = () => {
+  Storage.list('')
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
 
   return (
     <div className="App">
