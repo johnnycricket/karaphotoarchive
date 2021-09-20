@@ -1,7 +1,14 @@
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const SignIn = () => {
     return (
-        <h1>Log In</h1>
+        <div>
+            <h1>Log In</h1>
+            <Link to='/'>Dashboard</Link>
+        </div>
     )
 }
 
-export default SignIn;
+export default withAuthenticator(SignIn);
