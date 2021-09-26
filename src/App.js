@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import Dashboard from './pages/Dashboard';
-import Navigation from './components/navigation';
+import PrivateRoute from './components/PrivateRoute';
+import Navigation from './components/Navigation';
 import {
     BrowserRouter as Router,
     Switch,
@@ -21,16 +22,19 @@ const App = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [user, setUser] = useState({});
 
-    useEffect(() => {
-        const getData = async () => {
-            try{
-                const user = await Auth.currentAuthenticatedUser();
-                setIsAdmin(user.signInUserSession.accessToken.payload['cognito:groups'].includes('admin'))
-                setUser(user);
-            } catch(e) {
-                console.log(e)
-            }
+    const getData = async () => {
+        try {
+            const userToSet = await Auth.currentAuthenticatedUser();
+            
+            setIsAdmin(userToSet.signInUserSession.accessToken.payload['cognito:groups'].includes('admin'))
+            setUser(userToSet);
+        } catch(e) {
+            console.log(e)
         }
+    }
+
+    useEffect(() => {
+        getData();
     })
 
     Storage.list('')
@@ -44,21 +48,24 @@ const App = () => {
     return (
         <div className="App">
             <Router>
-                <Navigation></Navigation>
+                <Navigation user={user}></Navigation>
                 <Switch>
                     <Route path="/sign-in">
                         <SignIn />
                     </Route>
-                    <Route exact path="/">
+                    <PrivateRoute path="/galleries/:year/:galleryId" admin={isAdmin}>
+                        <Gallery user={user}></Gallery>
+                    </PrivateRoute>
+                    <PrivateRoute path="/galleries" admin={isAdmin}>
+                        <Galleries user={user}></Galleries>
+                    </PrivateRoute>
+                    <PrivateRoute path="/upload" admin={isAdmin}>
+                        <Upload user={user}></Upload>
+                    </PrivateRoute>
+                    <Route path="/" exact>
                         {!user.attributes && <Link to='/sign-in'></Link>}
-                        {user.attributes && <button onClick={handleLogout()}></button>}
+                        {user.attributes && <button onClick={handleLogout()}>Log Out</button>}
                         <Dashboard />
-                    </Route>
-                    <Route path="/galleries/:year/:galleryId" component={Gallery}/>
-                    <Route path="/galleries" component={Galleries}/>
-                    <Route path="/upload" component={Upload}/>
-                    <Route path="/new-gallery">
-                        
                     </Route>
                 </Switch>
             </Router>

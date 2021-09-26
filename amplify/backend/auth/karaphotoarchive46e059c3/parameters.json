@@ -1,6 +1,6 @@
 {
     "identityPoolName": "karaphotoarchive46e059c3_identitypool_46e059c3",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "karaph46e059c3",
     "userPoolName": "karaphotoarchive46e059c3_userpool_46e059c3",
     "autoVerifiedAttributes": [

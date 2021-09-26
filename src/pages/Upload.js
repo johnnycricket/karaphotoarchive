@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { SessionTypes } from '../enums/SessionTypes';
 
-const Upload = () => {
+const Upload = (admin) => {
     const [sessionType, setSession] = useState(SessionTypes.WEDDINGS);
 
     const handleSessionTypeSelect = (e) => {
