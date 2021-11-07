@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({children, ...rest}, admin) => {
     const { state } = useLocation();
-
-    console.log(admin);
+    console.log('prot route')
+    console.log(rest.admin);
     return (
         <Route {...rest} render={({ location }) => {
-            return admin === true ? children : <Redirect to={{
+            return rest.admin === true ? children : <Redirect to={{
                 pathname: '/sign-in',
                 state: { from: location }
             }} />

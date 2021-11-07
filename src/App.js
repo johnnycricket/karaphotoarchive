@@ -22,19 +22,22 @@ const App = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [user, setUser] = useState({});
 
-    const getData = async () => {
-        try {
-            const userToSet = await Auth.currentAuthenticatedUser();
-            
-            setIsAdmin(userToSet.signInUserSession.accessToken.payload['cognito:groups'].includes('admin'))
-            setUser(userToSet);
-        } catch(e) {
-            console.log(e)
-        }
-    }
-
     useEffect(() => {
-        getData();
+        const getData = async () => {
+            try {
+                const userToSet = await Auth.currentAuthenticatedUser();
+                
+                setIsAdmin(userToSet.signInUserSession.accessToken.payload['cognito:groups'].includes('admin'))
+                setUser(userToSet);
+                console.log('state set');
+                console.log(userToSet);
+                console.log(isAdmin);
+            } catch(e) {
+                console.log('error thingy');
+                console.log(e);
+            }
+        }   
+        getData(); 
     })
 
     Storage.list('')
@@ -65,7 +68,7 @@ const App = () => {
                     <Route path="/" exact>
                         {!user.attributes && <Link to='/sign-in'></Link>}
                         {user.attributes && <button onClick={handleLogout()}>Log Out</button>}
-                        <Dashboard />
+                        <Dashboard user={user}/>
                     </Route>
                 </Switch>
             </Router>
