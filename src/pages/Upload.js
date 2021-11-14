@@ -17,7 +17,7 @@ const Upload = (user) => {
             <form>
                 <label>Session Type</label>
                 <select value={sessionType} onChange={(e) => handleSessionTypeSelect(e)}>
-                    {Object.values(sessionType).map(value => 
+                    {Object.values(SessionTypes).map(value => 
                         <option key={value} value={value}>{value}</option>
                     )}
                 </select>

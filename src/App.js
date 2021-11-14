@@ -1,6 +1,7 @@
 import './App.scss';
 import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import awsconfig from './aws-exports';
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
@@ -76,4 +77,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default withAuthenticator(App);

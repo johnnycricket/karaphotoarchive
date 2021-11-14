@@ -1,7 +1,7 @@
 import { Route, Redirect } from "react-router";
 import { useLocation } from 'react-router-dom';
 
-const PrivateRoute = ({children, ...rest}, admin) => {
+const PrivateRoute = ({children, ...rest}) => {
     const { state } = useLocation();
     console.log('prot route')
     console.log(rest.admin);

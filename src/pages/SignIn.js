@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SignIn = () => {
     return (
         <div>
-            <Link to='/'>Dashboard</Link>
+            <p>Logged in. Head back to: <Link to='/'>Dashboard</Link></p>
         </div>
     )
 }
