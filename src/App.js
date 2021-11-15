@@ -1,4 +1,4 @@
-import './App.scss';
+import './scss/App.scss';
 import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Storage } from 'aws-amplify';
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -50,7 +50,7 @@ const App = () => {
     }
   
     return (
-        <div className="App">
+        <div className="App" data-testid="app-container">
             <Router>
                 <Navigation user={user}></Navigation>
                 <Switch>
