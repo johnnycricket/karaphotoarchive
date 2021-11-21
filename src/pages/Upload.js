@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { SessionTypes } from '../enums/SessionTypes';
+import { Years } from '../enums/Years';
 
 const Upload = (user) => {
     const [sessionType, setSession] = useState(SessionTypes.WEDDINGS);
-    const [sessionYear, setSessionYear] = useState("");
+    const [sessionYear, setSessionYear] = useState(Years[11]);
     const [sessionName, setSessionName] = useState("");
+    const [sessionFiles, setSessionFiles] = useState([]);
 
     const handleSessionTypeSelect = (e) => {
         setSession(e.target.value)
@@ -19,29 +21,35 @@ const Upload = (user) => {
         setSessionName(e.target.value)
     }
     
-    const buildPayload = () => {
+    const handleSubmit = (e) => {
         
     }
 
     return (
         <section>
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <label for="sessionType">Session Type</label>
                 <select id="sessionType" value={sessionType} onChange={(e) => handleSessionTypeSelect(e)}>
                     {Object.values(SessionTypes).map(value => 
                         <option key={value} value={value}>{value}</option>
                     )}
                 </select>
+                
                 <label for="sessionDate">Session Date</label>
-                <select id="sessionDate" value="" onChange={(e) => handleSessionYearSelect(e)}></select>
+                <select id="sessionDate" value={sessionYear} onChange={(e) => handleSessionYearSelect(e)}>
+                    {Object.values(Years).map(value => 
+                        <option key={value} value={value}>{value}</option>
+                    )}
+                </select>
+                
                 <label for="sessionName">Session Name</label>
-                <input id="sessionName" type="text"/>
+                <input id="sessionName" type="text" onChange={(e) => handleSessionName(e)}/>
+                
                 <label for="sessionFiles">Upload Images</label>
                 <input
                     id="sessionFiles"
                     type="file"
                     name="file-input"
-                    accept="image/jpeg, image/png"
                     multiple="true"
                 />
                 <button>Submit</button>
