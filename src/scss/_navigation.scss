@@ -3,4 +3,18 @@ nav {
     > * {
         flex: 1 100%;
     }
+    div {
+        margin: 1em;
+
+        &:first-child {
+            text-align: left;
+        }
+        &:last-child {
+            text-align: right;
+            margin: 1.5em 1em
+        }
+    }
+    a {
+        padding: 0 0.5em;
+    }
 };
