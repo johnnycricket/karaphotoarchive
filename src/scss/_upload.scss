@@ -1,0 +1,19 @@
+.upload {
+    display: flex;
+    form {
+        td {
+            padding: 1em;
+            &:first-child {
+                width: 20%;
+                text-align: right;
+            }
+            &:last-child {
+                width: 80%;
+                text-align: left;
+            }
+            .fileList {
+                width: 100%;
+            }
+        }
+    }
+}

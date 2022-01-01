@@ -4,7 +4,7 @@ const Navigation = () => {
     return (
         <nav>
             <div>
-                <h4>Kara Vorwald Photography Archive</h4>
+                <h1>Kara Vorwald Photography Archive</h1>
             </div>
             <div>
                 <Link to="/galleries">galleries</Link>
