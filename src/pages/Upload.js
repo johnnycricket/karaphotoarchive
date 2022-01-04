@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { SessionTypes } from '../enums/SessionTypes';
 import { Years } from '../enums/Years';
 import ImageFile  from '../components/ImageFile';
+import FileUploadService from '../services/file-upload-service';
 
 const Upload = (user) => {
     const [sessionType, setSession] = useState(SessionTypes.WEDDINGS);
@@ -53,6 +54,12 @@ const Upload = (user) => {
     const handleSubmit = (e) => {
         console.log(e);
         e.preventDefault();
+        const sessionDetails = {
+            sessionName: sessionName, 
+            sessionYear: sessionYear, 
+            sessionType: sessionType
+        }
+        FileUploadService(sessionDetails, sessionFiles)
     }
 
     return (
