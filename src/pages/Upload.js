@@ -55,8 +55,8 @@ const Upload = (user) => {
         console.log(e);
         e.preventDefault();
         const sessionDetails = {
-            sessionName: sessionName, 
-            sessionYear: sessionYear, 
+            sessionName: sessionName,
+            sessionYear: sessionYear,
             sessionType: sessionType
         }
         FileUploadService(sessionDetails, sessionFiles)

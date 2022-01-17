@@ -1,6 +1,6 @@
 import './scss/App.scss';
 import React, { useEffect, useState } from 'react';
-import Amplify, { Auth, Storage } from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import awsconfig from './aws-exports';
 import Dashboard from './pages/Dashboard';
@@ -40,10 +40,6 @@ const App = () => {
         }   
         getData(); 
     })
-
-    Storage.list('')
-        .then(result => console.log(result))
-        .catch(err => console.log(err))
 
     const handleLogout = async() => {
         await Auth.signOut();
